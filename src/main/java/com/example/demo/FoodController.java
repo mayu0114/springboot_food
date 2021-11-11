@@ -27,7 +27,7 @@ public class FoodController {
 	@Autowired
 	CategoryRepository categoryRepository;
 
-	//賞味期限の表示方法
+	//食べ物一覧の表示
 	@RequestMapping("/foods")
 	public ModelAndView index(ModelAndView mv) {
 		
