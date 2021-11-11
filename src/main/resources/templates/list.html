@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Items</title>
+</head>
+<body>
+
+<span th:replace="menu"></span>
+
+<hr>
+
+<table border="1">
+<tr>
+<th>食べ物名</th><th>購入日</th><th>開封日</th><th>賞味期限</th><th></th><th></th><th></th>
+</tr>
+<tr th:each="food:${foods}">
+<td th:text="${food.name}"></td>
+<td th:text="${#dates.format(food.purchaseDate, 'yyyy年/MM月/dd日')}"></td>
+<td th:text="${#dates.format(food.openingDate, 'yyyy年/MM月/dd日')}"></td>
+<td th:text="${#dates.format(food.expiryDate, 'yyyy年/MM月/dd日')}"></td>
+<td><a th:href="'/cart/add/'+${food.code}">詳細</a></td>
+<td><a th:href="'/cart/add/'+${food.code}">更新</a></td>
+<td><a th:href="'/cart/add/'+${food.code}">削除</a></td>
+</tr>
+</table>
+
+<hr>
+
+
+
+</body>
+</html>

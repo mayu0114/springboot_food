@@ -1,0 +1,2 @@
+<a href="/foods">全食品</a>
+<a th:each="c:${session.categories}"　th:href="'/foods/'+${c.categoryname}"> </a>
